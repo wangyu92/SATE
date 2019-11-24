@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>세 가지 Adaptation Algorithm</title>
+
+    <style type="text/css">
+    iframe {
+        width: 100%;
+        height: 400px;
+    }
+
+    .button-start {
+        width: 100%;
+        height: 30px;
+
+        margin-bottom: 20px;
+    }
+    </style>
+</head>
+<body>
+    <button class="button-start" type="button" onclick="onStart()">Start!</button>
+    <button class="button-start" type="button" onclick="onPrintLog()">Print log!</button>
+    <iframe id="sate" sandbox="allow-scripts allow-same-origin" src="sate/dash.js/samples/dash-if-reference-player/"></iframe>
+    <iframe id="bba" sandbox="allow-scripts allow-same-origin" src="bba/dash.js/samples/dash-if-reference-player/"></iframe>
+    <iframe id="dynamic" sandbox="allow-scripts allow-same-origin" src="dynamic/dash.js/samples/dash-if-reference-player/"></iframe> -->
+
+    <script>
+        function onStart() {
+            var iframeSate = document.getElementById("sate");
+            var iframeBBA = document.getElementById("bba");
+            var iframeDynamic = document.getElementById("dynamic");
+
+            iframeSate.contentWindow.doLoad();
+            iframeBBA.contentWindow.doLoad();
+            iframeDynamic.contentWindow.doLoad();
+        }
+
+        function onPrintLog() {
+            var iframeSate = document.getElementById("sate");
+            var iframeBBA = document.getElementById("bba");
+            var iframeDynamic = document.getElementById("dynamic");
+
+            iframeSate.contentWindow.printLog();
+            iframeBBA.contentWindow.printLog();
+            iframeDynamic.contentWindow.printLog();
+        }
+    </script>
+</body>
+</html>
